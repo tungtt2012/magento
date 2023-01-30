@@ -1,3 +1,26 @@
+## Installation
+
+
+   ```sh
+    # run docker-compose
+    docker-compose up -d
+    
+    # exec to php-fpm
+    docker exec -it magento-php-fpm-1 bash
+    
+    # Install dependency
+    composer install
+    
+    # run setup
+    php bin/magento setup:install --base-url="http://localhost:8000" --db-host="mysql" --db-name="magento" --db-user="root" --db-password="root" --admin-firstname="trinh" --admin-lastname="tung" --admin-email="test@test.com" --admin-user="admin" --admin-password="admin123" --language="en_US" --currency="USD" --timezone="Asia/Ho_Chi_Minh" --use-rewrites="1" --backend-frontname="admin"
+    
+    # setup cronjob
+    php bin/magento cron:install
+    
+    # run cronjob
+     php bin/magento cron:run
+   ```
+
 [![Open Source Helpers](https://www.codetriage.com/magento/magento2/badges/users.svg)](https://www.codetriage.com/magento/magento2)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/magento/magento2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/magento-2/localized.svg)](https://crowdin.com/project/magento-2)
